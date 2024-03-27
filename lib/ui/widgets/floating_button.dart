@@ -12,6 +12,7 @@ class FloatingButton extends StatefulWidget {
 }
 
 class _FloatingButtonState extends State<FloatingButton> {
+  // double screenWidht = MediaQuery.of(context).size.width;
   @override
   Widget build(BuildContext context) {
     return FloatingActionButton(
