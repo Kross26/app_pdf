@@ -1,15 +1,19 @@
 name: app_pdf
 description: "A new Flutter project."
-publish_to: 'none'
+publish_to: "none"
 version: 0.1.0
 
 environment:
-  sdk: '>=3.3.1 <4.0.0'
+  sdk: ">=3.3.1 <4.0.0"
 
 dependencies:
+  equatable: ^2.0.5
   flutter:
     sdk: flutter
+  flutter_bloc: ^8.1.5
+  flutter_pdfview: ^1.3.2
   go_router: ^13.2.1
+  path_provider: ^2.1.2
   pdf: ^3.10.8
 
 dev_dependencies:
