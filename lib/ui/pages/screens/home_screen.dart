@@ -16,6 +16,7 @@ class _HomeScreenState extends State<HomeScreen> {
 
   @override
   Widget build(BuildContext context) {
+    double screenWidht = MediaQuery.of(context).size.width;
     final screens = [
       const HomeView(),
       const ArchivesView(),
@@ -31,9 +32,14 @@ class _HomeScreenState extends State<HomeScreen> {
         title: Center(
           child: Text(
             pageNames[currentIndex],
+            style: TextStyle(
+              fontSize: screenWidht * 0.05,
+              fontWeight: FontWeight.w400,
+              fontFamily: 'BebasNeue',
+            ),
           ),
         ),
-        backgroundColor: Colors.deepPurple,
+        backgroundColor: const Color.fromRGBO(148, 148, 148, 1),
         elevation: 5,
         shadowColor: Colors.black,
       ),
@@ -58,7 +64,7 @@ class _HomeScreenState extends State<HomeScreen> {
             topRight: Radius.circular(60.0),
           ),
           child: NavigationBar(
-            destinations: [
+            destinations: const [
               NavigationDestination(
                   icon: Icon(Icons.widgets_outlined), label: 'Actions'),
               NavigationDestination(
@@ -66,9 +72,9 @@ class _HomeScreenState extends State<HomeScreen> {
               NavigationDestination(
                   icon: Icon(Icons.settings_outlined), label: 'Configuration'),
             ],
-            indicatorColor: Colors.white,
-            backgroundColor: Colors.grey[100],
-            // elevation: 0,
+            indicatorColor: Colors.white54,
+            backgroundColor: const Color.fromRGBO(148, 148, 148, 1),
+            shadowColor: Colors.black,
             selectedIndex: currentIndex,
             // se llama cuando se seleciona una nueva pagina y actualiza "currentIndex" mostrando el titulo correspondiente
             onDestinationSelected: (int index) {
