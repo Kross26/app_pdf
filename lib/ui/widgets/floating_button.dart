@@ -19,7 +19,7 @@ class _FloatingButtonState extends State<FloatingButton> {
       onPressed: () {
         print('Funcionaaa');
       },
-      backgroundColor: Colors.deepPurple,
+      backgroundColor: const Color.fromRGBO(148, 148, 148, 1),
       child: const Icon(
         Icons.archive_rounded,
         color: Colors.white,
