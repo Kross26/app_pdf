@@ -13,6 +13,7 @@ dependencies:
   flutter_bloc: ^8.1.5
   flutter_pdfview: ^1.3.2
   go_router: ^13.2.1
+  google_fonts: ^6.2.1
   path_provider: ^2.1.2
   pdf: ^3.10.8
 
@@ -23,3 +24,11 @@ dev_dependencies:
 
 flutter:
   uses-material-design: true
+  assets:
+    - assets/loading.gif
+    - assets/crear.png
+  fonts:
+    - family: BebasNeue
+      fonts:
+        - asset: fonts/BebasNeue-Regular.ttf
+          weight: 700
