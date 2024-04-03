@@ -1,3 +1,5 @@
+export 'package:app_pdf/ui/widgets/row_item.dart';
+
 export 'package:app_pdf/ui/pages/views/archives_view.dart';
 export 'package:app_pdf/ui/pages/views/configuration_view.dart';
 export 'package:app_pdf/ui/pages/screens/home_screen.dart';
