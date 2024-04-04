@@ -36,7 +36,7 @@ class ConfigurationView extends StatelessWidget {
             Column(
               children: [
                 Container(
-                  height: screenHeight * 0.06,
+                  height: screenHeight * 0.08,
                   decoration: BoxDecoration(
                       borderRadius: BorderRadius.circular(10),
                       color: Colors.white),
