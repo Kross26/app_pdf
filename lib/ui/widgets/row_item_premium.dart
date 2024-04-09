@@ -23,28 +23,34 @@ class RowItemPremium extends StatelessWidget {
         child: Padding(
           padding: const EdgeInsets.all(8.0),
           child: Row(
+            mainAxisAlignment: MainAxisAlignment.spaceAround,
             children: [
               Icon(icon),
-              SizedBox(width: screenWidht * 0.06),
-              Column(
-                children: [
-                  Text(
-                    title,
-                    style: TextStyle(
-                      fontWeight: FontWeight.bold,
-                      fontSize: screenHeight * 0.019,
+              // SizedBox(width: screenWidht * 0.06),
+              Padding(
+                padding: const EdgeInsets.only(top: 3),
+                child: Column(
+                  crossAxisAlignment: CrossAxisAlignment.start,
+                  // mainAxisAlignment: MainAxisAlignment.start,
+                  children: [
+                    Text(
+                      title,
+                      style: TextStyle(
+                        fontWeight: FontWeight.bold,
+                        fontSize: screenHeight * 0.019,
+                      ),
+                      textAlign: TextAlign.left,
                     ),
-                    textAlign: TextAlign.left,
-                  ),
-                  const Column(
-                    children: [
-                      Text(
-                        'Acceso a premium',
-                        textAlign: TextAlign.left,
-                      )
-                    ],
-                  )
-                ],
+                    const Column(
+                      children: [
+                        Text(
+                          'Acceso a premium',
+                          textAlign: TextAlign.left,
+                        )
+                      ],
+                    )
+                  ],
+                ),
               ),
               SizedBox(width: screenWidht * 0.3),
               Icon(icon2),

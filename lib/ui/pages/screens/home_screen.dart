@@ -2,9 +2,15 @@ import 'package:app_pdf/ui/screens.dart';
 import 'package:flutter/material.dart';
 
 class HomeScreen extends StatefulWidget {
+  final double screenWidth;
+  final double screenHeight;
   static const String name = 'home_screen'; // const para usar con gorouter
 
-  const HomeScreen({super.key});
+  const HomeScreen({
+    super.key,
+    required this.screenWidth,
+    required this.screenHeight,
+  });
 
   @override
   State<HomeScreen> createState() => _HomeScreenState();
@@ -17,6 +23,8 @@ class _HomeScreenState extends State<HomeScreen> {
   @override
   Widget build(BuildContext context) {
     double screenWidht = MediaQuery.of(context).size.width;
+    double screenHeight = MediaQuery.of(context).size.height;
+
     final screens = [
       const HomeView(),
       const ArchivesView(),
@@ -49,6 +57,8 @@ class _HomeScreenState extends State<HomeScreen> {
       ),
       extendBody: true,
       bottomNavigationBar: Container(
+        width: widget.screenWidth,
+        height: screenHeight * 0.09,
         clipBehavior: Clip.hardEdge,
         decoration: const BoxDecoration(
             borderRadius: BorderRadius.only(
@@ -66,12 +76,28 @@ class _HomeScreenState extends State<HomeScreen> {
           child: NavigationBar(
             destinations: const [
               NavigationDestination(
-                  icon: Icon(Icons.widgets_outlined), label: 'Actions'),
+                icon: Icon(
+                  Icons.widgets_outlined,
+                ),
+                label: 'Actions',
+              ),
               NavigationDestination(
-                  icon: Icon(Icons.archive_outlined), label: 'Archives'),
+                icon: Icon(
+                  Icons.archive_outlined,
+                  size: 20.0,
+                ),
+                label: 'Archives',
+              ),
               NavigationDestination(
-                  icon: Icon(Icons.settings_outlined), label: 'Configuration'),
+                icon: Icon(
+                  Icons.settings_outlined,
+                  size: 20.0,
+                ),
+                label: 'Configuration',
+              ),
             ],
+
+            animationDuration: const Duration(milliseconds: 400),
             indicatorColor: Colors.white54,
             backgroundColor: const Color.fromRGBO(148, 148, 148, 1),
             shadowColor: Colors.black,

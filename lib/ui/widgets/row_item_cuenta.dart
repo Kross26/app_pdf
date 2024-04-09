@@ -9,21 +9,15 @@ class RowItemCuenta extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    double screenWidht = MediaQuery.of(context).size.width;
-    double screenHeight = MediaQuery.of(context).size.height;
-    return Padding(
-      padding: const EdgeInsets.all(3.0),
-      child: SizedBox(
-        height: screenHeight * 0.2,
-        child: Padding(
-          padding: const EdgeInsets.all(8.0),
-          child: Row(
-            children: [
-              Icon(icon),
-              SizedBox(width: screenWidht * 0.03),
-            ],
-          ),
-        ),
+    // double screenWidht = MediaQuery.of(context).size.width;
+    // double screenHeight = MediaQuery.of(context).size.height;
+    return SizedBox(
+      // height: screenHeight * 0.2,
+      child: Row(
+        children: [
+          Icon(icon),
+          // SizedBox(width: screenWidht * 0.03),
+        ],
       ),
     );
   }

@@ -16,6 +16,7 @@ class ConfigurationView extends StatelessWidget {
         child: Padding(
           padding: const EdgeInsets.all(8.0),
           child: Column(
+            mainAxisAlignment: MainAxisAlignment.spaceAround,
             children: [
               Row(
                 children: [
@@ -75,39 +76,53 @@ class ConfigurationView extends StatelessWidget {
                       topLeft: Radius.circular(10),
                     ),
                     color: Colors.white),
-                child: Row(
-                  children: [
-                    const RowItemCuenta(
-                      icon: Icons.person_2_outlined,
-                    ),
-                    const Text(
-                      'Licencia',
-                      style: TextStyle(fontWeight: FontWeight.bold),
-                    ),
-                    SizedBox(width: screenWidht * 0.4),
-                    const Row(
-                      children: [Text('Gratuita')],
-                    )
-                  ],
+                child: const Padding(
+                  padding: EdgeInsets.only(left: 10, right: 20),
+                  child: Row(
+                    mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                    children: [
+                      RowItemCuenta(
+                        icon: Icons.person_2_outlined,
+                      ),
+                      Row(
+                        children: [
+                          Text(
+                            'Licencia',
+                            textAlign: TextAlign.left,
+                            style: TextStyle(fontWeight: FontWeight.bold),
+                          ),
+                        ],
+                      ),
+                      // SizedBox(width: screenWidht * 0.4),
+                      Row(
+                        children: [
+                          Text('Gratuita'),
+                        ],
+                      ),
+                    ],
+                  ),
                 ),
               ),
               Container(
                 height: screenHeight * 0.07,
                 decoration: const BoxDecoration(color: Colors.white),
-                child: Row(
-                  children: [
-                    const RowItemCuenta(
-                      icon: Icons.person_2_outlined,
-                    ),
-                    const Text(
-                      'Documentos Restantes',
-                      style: TextStyle(fontWeight: FontWeight.bold),
-                    ),
-                    SizedBox(width: screenWidht * 0.16),
-                    const Row(
-                      children: [Text('0 de 3')],
-                    )
-                  ],
+                child: const Padding(
+                  padding: EdgeInsets.only(left: 10, right: 20),
+                  child: Row(
+                    mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                    children: [
+                      RowItemCuenta(
+                        icon: Icons.person_2_outlined,
+                      ),
+                      Text(
+                        'Documentos Restantes',
+                        style: TextStyle(fontWeight: FontWeight.bold),
+                      ),
+                      Row(
+                        children: [Text('0 de 3')],
+                      )
+                    ],
+                  ),
                 ),
               ),
               Container(
@@ -117,20 +132,24 @@ class ConfigurationView extends StatelessWidget {
                         bottomLeft: Radius.circular(10),
                         bottomRight: Radius.circular(10)),
                     color: Colors.white),
-                child: Row(
-                  children: [
-                    const RowItemCuenta(
-                      icon: Icons.person_2_outlined,
-                    ),
-                    const Text(
-                      'Bloqueo Huella',
-                      style: TextStyle(fontWeight: FontWeight.bold),
-                    ),
-                    SizedBox(width: screenWidht * 0.26),
-                    const Row(
-                      children: [Text('Premium')],
-                    )
-                  ],
+                child: const Padding(
+                  padding: EdgeInsets.only(left: 10, right: 20),
+                  child: Row(
+                    mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                    children: [
+                      RowItemCuenta(
+                        icon: Icons.person_2_outlined,
+                      ),
+                      Text(
+                        'Bloqueo Huella',
+                        style: TextStyle(fontWeight: FontWeight.bold),
+                      ),
+                      // SizedBox(width: screenWidht * 0.26),
+                      Row(
+                        children: [Text('Premium')],
+                      )
+                    ],
+                  ),
                 ),
               ),
               SizedBox(height: screenHeight * 0.007),
@@ -159,43 +178,55 @@ class ConfigurationView extends StatelessWidget {
                       topLeft: Radius.circular(10),
                     ),
                     color: Colors.white),
-                child: Row(
-                  children: [
-                    const RowItemCuenta(
-                      icon: Icons.sync,
-                    ),
-                    const Text(
-                      'Suscripción',
-                      style: TextStyle(fontWeight: FontWeight.bold),
-                    ),
-                    SizedBox(width: screenWidht * 0.424),
-                    const Row(
-                      children: [
-                        Icon(Icons.arrow_forward),
-                      ],
-                    )
-                  ],
+                child: const Padding(
+                  padding: EdgeInsets.only(left: 10, right: 20),
+                  child: Row(
+                    mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                    children: [
+                      RowItemCuenta(
+                        icon: Icons.sync,
+                      ),
+                      Row(
+                        children: [
+                          Text(
+                            'Suscripción',
+                            style: TextStyle(fontWeight: FontWeight.bold),
+                          ),
+                        ],
+                      ),
+                      // SizedBox(width: screenWidht * 0.424),
+                      Row(
+                        children: [
+                          Icon(Icons.arrow_forward),
+                        ],
+                      )
+                    ],
+                  ),
                 ),
               ),
               Container(
                 height: screenHeight * 0.07,
                 decoration: const BoxDecoration(color: Colors.white),
-                child: Row(
-                  children: [
-                    const RowItemCuenta(
-                      icon: Icons.person_2_outlined,
-                    ),
-                    const Text(
-                      'Administar Suscripciones',
-                      style: TextStyle(fontWeight: FontWeight.bold),
-                    ),
-                    SizedBox(width: screenWidht * 0.17),
-                    const Row(
-                      children: [
-                        Icon(Icons.arrow_forward),
-                      ],
-                    )
-                  ],
+                child: const Padding(
+                  padding: EdgeInsets.only(left: 10, right: 20),
+                  child: Row(
+                    mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                    children: [
+                      RowItemCuenta(
+                        icon: Icons.person_2_outlined,
+                      ),
+                      Text(
+                        'Administar Suscripciones',
+                        style: TextStyle(fontWeight: FontWeight.bold),
+                      ),
+                      // SizedBox(width: screenWidht * 0.17),
+                      Row(
+                        children: [
+                          Icon(Icons.arrow_forward),
+                        ],
+                      )
+                    ],
+                  ),
                 ),
               ),
               Container(
@@ -205,22 +236,26 @@ class ConfigurationView extends StatelessWidget {
                         bottomLeft: Radius.circular(10),
                         bottomRight: Radius.circular(10)),
                     color: Colors.white),
-                child: Row(
-                  children: [
-                    const RowItemCuenta(
-                      icon: Icons.folder,
-                    ),
-                    const Text(
-                      'Preguntas más frecuentes',
-                      style: TextStyle(fontWeight: FontWeight.bold),
-                    ),
-                    SizedBox(width: screenWidht * 0.16),
-                    const Row(
-                      children: [
-                        Icon(Icons.arrow_forward),
-                      ],
-                    )
-                  ],
+                child: const Padding(
+                  padding: EdgeInsets.only(right: 20, left: 10),
+                  child: Row(
+                    mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                    children: [
+                      RowItemCuenta(
+                        icon: Icons.folder,
+                      ),
+                      Text(
+                        'Preguntas más frecuentes',
+                        style: TextStyle(fontWeight: FontWeight.bold),
+                      ),
+                      // SizedBox(width: screenWidht * 0.16),
+                      Row(
+                        children: [
+                          Icon(Icons.arrow_forward),
+                        ],
+                      )
+                    ],
+                  ),
                 ),
               ),
               SizedBox(height: screenHeight * 0.007),
