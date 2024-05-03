@@ -1,4 +1,4 @@
-import 'package:app_pdf/ui/routes/route.dart';
+import 'package:app_pdf/ui/routes/app_route.dart';
 import 'package:flutter/material.dart';
 
 void main() {

@@ -233,8 +233,8 @@ class ConfigurationView extends StatelessWidget {
                 height: screenHeight * 0.07,
                 decoration: const BoxDecoration(
                     borderRadius: BorderRadius.only(
-                        bottomLeft: Radius.circular(10),
-                        bottomRight: Radius.circular(10)),
+                        bottomLeft: Radius.circular(0),
+                        bottomRight: Radius.circular(0)),
                     color: Colors.white),
                 child: const Padding(
                   padding: EdgeInsets.only(right: 20, left: 10),
@@ -242,7 +242,7 @@ class ConfigurationView extends StatelessWidget {
                     mainAxisAlignment: MainAxisAlignment.spaceBetween,
                     children: [
                       RowItemCuenta(
-                        icon: Icons.folder,
+                        icon: Icons.folder_open_outlined,
                       ),
                       Text(
                         'Preguntas más frecuentes',
@@ -258,12 +258,35 @@ class ConfigurationView extends StatelessWidget {
                   ),
                 ),
               ),
-              SizedBox(height: screenHeight * 0.007),
-              //
-              //
-              //
-              //
-              //
+              Container(
+                height: screenHeight * 0.07,
+                decoration: const BoxDecoration(
+                    borderRadius: BorderRadius.only(
+                        bottomLeft: Radius.circular(10),
+                        bottomRight: Radius.circular(10)),
+                    color: Colors.white),
+                child: const Padding(
+                  padding: EdgeInsets.only(right: 20, left: 10),
+                  child: Row(
+                    mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                    children: [
+                      RowItemCuenta(
+                        icon: Icons.chat_bubble_outline,
+                      ),
+                      Text(
+                        'Atención al cliente',
+                        style: TextStyle(fontWeight: FontWeight.bold),
+                      ),
+                      // SizedBox(width: screenWidht * 0.16),
+                      Row(
+                        children: [
+                          Icon(Icons.arrow_forward),
+                        ],
+                      )
+                    ],
+                  ),
+                ),
+              ),
             ],
           ),
         ),
