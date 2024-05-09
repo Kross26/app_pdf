@@ -16,9 +16,7 @@ class _FloatingButtonState extends State<FloatingButton> {
   @override
   Widget build(BuildContext context) {
     return FloatingActionButton(
-      onPressed: () {
-        print('Funcionaaa');
-      },
+      onPressed: () {},
       backgroundColor: const Color.fromRGBO(148, 148, 148, 1),
       child: const Icon(
         Icons.archive_rounded,
