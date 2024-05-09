@@ -6,6 +6,7 @@ class RowItemCuenta extends StatelessWidget {
   final Text? trailing;
   final Switch? trailingSwitch;
   final Divider? divider;
+  final Function? onTapCuenta;
   const RowItemCuenta({
     super.key,
     required this.iconCuenta,
@@ -13,24 +14,20 @@ class RowItemCuenta extends StatelessWidget {
     this.trailing,
     this.divider,
     this.trailingSwitch,
+    this.onTapCuenta,
   });
 
   @override
   Widget build(BuildContext context) {
     // double screenWidht = MediaQuery.of(context).size.width;
     // double screenHeight = MediaQuery.of(context).size.height;
-    return Padding(
-      padding: const EdgeInsets.only(left: 10, right: 10),
-      child: Card(
-        shape:
-            RoundedRectangleBorder(borderRadius: BorderRadius.circular(15.0)),
-        child: ListTile(
-          leading: iconCuenta,
-          title: titleCuenta,
-          onTap: () {},
-          trailing: trailing,
-          tileColor: Colors.white,
-        ),
+    return Card(
+      shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(15.0)),
+      child: ListTile(
+        leading: iconCuenta,
+        title: titleCuenta,
+        trailing: trailing,
+        tileColor: Colors.white,
       ),
     );
   }
