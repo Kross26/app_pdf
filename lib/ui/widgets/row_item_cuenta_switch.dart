@@ -12,7 +12,7 @@ class RowItemCuentaSwitch extends StatefulWidget {
 }
 
 class _RowItemCuentaSwitchState extends State<RowItemCuentaSwitch> {
-  bool _isSelected = false;
+  final bool _isSelected = false;
   @override
   Widget build(BuildContext context) {
     // double screenWidht = MediaQuery.of(context).size.width;
