@@ -31,10 +31,10 @@ class _HomeScreenState extends State<HomeScreen> {
       const ConfigurationView()
     ];
     return Scaffold(
-      floatingActionButton: FloatingButton(
-        onPressed: () {},
-        icon: Icons.archive,
-      ),
+      // floatingActionButton: FloatingButton(
+      //   onPressed: () {},
+      //   icon: Icons.archive,
+      // ),
       backgroundColor: Colors.white,
       appBar: AppBar(
         title: Center(
