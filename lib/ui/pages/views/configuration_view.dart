@@ -108,7 +108,7 @@ class _ConfigurationViewState extends State<ConfigurationView> {
             ),
             SizedBox(
               height: 10,
-            )
+            ),
           ],
         ),
       ),
