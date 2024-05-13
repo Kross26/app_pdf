@@ -13,11 +13,12 @@ class FloatingButton extends StatefulWidget {
 }
 
 class _FloatingButtonState extends State<FloatingButton> {
-  // double screenWidht = MediaQuery.of(context).size.width;
   @override
   Widget build(BuildContext context) {
+    double screenWidht = MediaQuery.of(context).size.width;
+    double screenHeight = MediaQuery.of(context).size.height;
     return Padding(
-      padding: const EdgeInsets.only(bottom: 60),
+      padding: const EdgeInsets.only(bottom: 100),
       child: Column(
         mainAxisAlignment: MainAxisAlignment.end,
         children: [
