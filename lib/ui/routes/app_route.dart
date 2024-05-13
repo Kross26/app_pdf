@@ -1,5 +1,4 @@
 import 'package:app_pdf/ui/screens.dart';
-
 import 'package:go_router/go_router.dart';
 
 final appRouter = GoRouter(routes: [
@@ -10,5 +9,10 @@ final appRouter = GoRouter(routes: [
       screenWidth: 0,
       screenHeight: 0,
     ),
+  ),
+  GoRoute(
+    path: '/invoice_screen',
+    // name: InvoiceForm.name,
+    builder: (context, state) => const InvoiceScreen(),
   ),
 ]);

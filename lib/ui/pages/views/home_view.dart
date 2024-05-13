@@ -1,3 +1,4 @@
+import 'package:app_pdf/ui/widgets/flatingButtom/floating_button.dart';
 import 'package:flutter/material.dart';
 
 class HomeView extends StatelessWidget {
@@ -8,6 +9,10 @@ class HomeView extends StatelessWidget {
     double screenWidht = MediaQuery.of(context).size.width;
     double screenHeight = MediaQuery.of(context).size.height;
     return Scaffold(
+      floatingActionButton: FloatingButton(
+        onPressed: () {},
+        icon: Icons.archive,
+      ),
       backgroundColor: const Color.fromRGBO(211, 211, 211, 1),
       body: SingleChildScrollView(
         child: Padding(

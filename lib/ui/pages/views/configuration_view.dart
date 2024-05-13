@@ -1,5 +1,5 @@
-import 'package:app_pdf/ui/widgets/row_item_cuenta.dart';
-import 'package:app_pdf/ui/widgets/row_item_general.dart';
+import 'package:app_pdf/ui/widgets/rowsConfiguration/row_item_cuenta.dart';
+import 'package:app_pdf/ui/widgets/rowsConfiguration/row_item_general.dart';
 import 'package:flutter/material.dart';
 import '../../screens.dart';
 
