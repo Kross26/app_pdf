@@ -8,8 +8,9 @@ class InvoiceScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     double screenWidht = MediaQuery.of(context).size.width;
-    double screenHeight = MediaQuery.of(context).size.height;
+    // double screenHeight = MediaQuery.of(context).size.height;
     return MaterialApp(
+      debugShowCheckedModeBanner: false,
       title: 'factura pdf',
       home: Scaffold(
         appBar: AppBar(
@@ -28,6 +29,7 @@ class InvoiceScreen extends StatelessWidget {
           elevation: 5,
           shadowColor: Colors.black,
         ),
+        // se hace referencia a otra pantalla
         body: InvoiceForm(),
       ),
     );
