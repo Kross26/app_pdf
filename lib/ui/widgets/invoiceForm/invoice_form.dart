@@ -1,7 +1,9 @@
 import 'package:flutter/material.dart';
 
 // se define un enumerador con 3 opciones
-enum ChangeItem { selected }
+enum ChangeItem { patente, marca, chasis }
+
+// final SelectedItem = _selectedItem;
 
 class InvoiceForm extends StatefulWidget {
   const InvoiceForm({super.key});
@@ -11,13 +13,20 @@ class InvoiceForm extends StatefulWidget {
 }
 
 class _InvoiceFormState extends State<InvoiceForm> {
-  ChangeItem? _item = ChangeItem.selected;
+  // ChangeItem? _item;
+  ChangeItem? _patente;
+  ChangeItem? _marca;
+  ChangeItem? _chasis;
+  ChangeItem? selected;
+
   Color activeColor = const Color.fromRGBO(211, 211, 211, 1);
 
   @override
   Widget build(BuildContext context) {
-    double screenWidht = MediaQuery.of(context).size.width;
+    double screenWidth = MediaQuery.of(context).size.width;
     double screenHeight = MediaQuery.of(context).size.height;
+    // bool isSelected = ;
+    // List<ChangeItem> selectedItems = [];
     return Scaffold(
       // color del background
       backgroundColor: const Color.fromRGBO(211, 211, 211, 1),
@@ -28,7 +37,7 @@ class _InvoiceFormState extends State<InvoiceForm> {
             // texto que se muestra al principio de la pantalla
             child: Text(
               'Selecciona una opción',
-              style: TextStyle(fontSize: screenWidht * 0.045),
+              style: TextStyle(fontSize: screenWidth * 0.045),
             ),
           ),
           SizedBox(height: screenHeight * 0.025),
@@ -37,21 +46,24 @@ class _InvoiceFormState extends State<InvoiceForm> {
               Padding(
                 padding: const EdgeInsets.only(left: 50, right: 50),
                 child: Container(
-                  // height: screenHeight * 0.05,
-                  // width: screenWidht * 0.8,
                   decoration: const BoxDecoration(
-                      color: Colors.white,
-                      borderRadius: BorderRadius.all(Radius.circular(30))),
-                  child: RadioListTile(
+                    color: Colors.white,
+                    borderRadius: BorderRadius.all(Radius.circular(30)),
+                  ),
+                  child: RadioListTile<ChangeItem?>(
                     title: const Text('Patente'),
-                    value: ChangeItem.selected,
-                    groupValue: _item,
+                    value: selected,
+                    groupValue: _patente,
                     onChanged: (ChangeItem? value) {
                       setState(() {
-                        _item = value;
+                        if (selected == value) {
+                          selected =
+                              null; // Desmarca el elemento si se selecciona de nuevo
+                        } else {
+                          selected = value; // Marca el elemento seleccionado
+                        }
                       });
                     },
-                    // color al ser seleccionado
                     activeColor: activeColor,
                   ),
                 ),
@@ -64,18 +76,17 @@ class _InvoiceFormState extends State<InvoiceForm> {
               Padding(
                 padding: const EdgeInsets.only(left: 50, right: 50),
                 child: Container(
-                  // height: screenHeight * 0.05,
-                  // width: screenWidht * 0.8,
                   decoration: const BoxDecoration(
-                      color: Colors.white,
-                      borderRadius: BorderRadius.all(Radius.circular(30))),
+                    color: Colors.white,
+                    borderRadius: BorderRadius.all(Radius.circular(30)),
+                  ),
                   child: RadioListTile(
                     title: const Text('Marca'),
-                    value: ChangeItem.selected,
-                    groupValue: _item,
+                    value: ChangeItem.marca,
+                    groupValue: selected,
                     onChanged: (ChangeItem? value) {
                       setState(() {
-                        _item = value;
+                        selected = value;
                       });
                     },
                     activeColor: activeColor,
@@ -90,18 +101,18 @@ class _InvoiceFormState extends State<InvoiceForm> {
               Padding(
                 padding: const EdgeInsets.only(left: 50, right: 50),
                 child: Container(
-                  // height: screenHeight * 0.05,
-                  // width: screenWidht * 0.8,
                   decoration: const BoxDecoration(
-                      color: Colors.white,
-                      borderRadius: BorderRadius.all(Radius.circular(30))),
-                  child: RadioListTile(
+                    color: Colors.white,
+                    borderRadius: BorderRadius.all(Radius.circular(30)),
+                  ),
+                  child: RadioListTile<ChangeItem?>(
                     title: const Text('Chasis'),
-                    value: ChangeItem.selected,
-                    groupValue: _item,
+                    value: selected,
+                    // guarda el valor del grupo, ej: patente, marca chasis
+                    groupValue: selected,
                     onChanged: (ChangeItem? value) {
                       setState(() {
-                        _item = value;
+                        selected = value;
                       });
                     },
                     activeColor: activeColor,
@@ -114,9 +125,9 @@ class _InvoiceFormState extends State<InvoiceForm> {
           ElevatedButton(
             onPressed: () {
               // Imprimir los ítems seleccionados
-              // print('Ítems seleccionados: $selectedItems');
+              print('Ítems seleccionados: $selected');
             },
-            child: Text('Continuar'),
+            child: const Text('Continuar'),
           ),
         ],
       ),
