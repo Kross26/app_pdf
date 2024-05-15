@@ -60,7 +60,36 @@ class HomeView extends StatelessWidget {
                                   ),
                                 ),
                                 Text(
-                                  'CONVERT TO PDF',
+                                  'TEXT TO PDF',
+                                  style:
+                                      TextStyle(fontSize: screenWidht * 0.03),
+                                ),
+                              ],
+                            ),
+                          ),
+                        ),
+                      ),
+                    ),
+                    Expanded(
+                      child: InkWell(
+                        onTap: () {},
+                        child: Card(
+                          elevation: 10,
+                          child: Container(
+                            decoration: BoxDecoration(
+                                borderRadius: BorderRadius.circular(10),
+                                color: Colors.grey[200]),
+                            child: Column(
+                              children: [
+                                Padding(
+                                  padding: const EdgeInsets.all(10.0),
+                                  child: Image.asset(
+                                    'assets/crear.png',
+                                    width: screenWidht * 0.15,
+                                  ),
+                                ),
+                                Text(
+                                  'IMAGE TO PDF',
                                   style:
                                       TextStyle(fontSize: screenWidht * 0.03),
                                 ),
