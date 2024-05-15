@@ -22,9 +22,10 @@ class _HomeScreenState extends State<HomeScreen> {
 
   @override
   Widget build(BuildContext context) {
+    // responsive size
     double screenWidht = MediaQuery.of(context).size.width;
     double screenHeight = MediaQuery.of(context).size.height;
-
+    double iconSize = MediaQuery.of(context).size.width * 0.045;
     final screens = [
       const HomeView(),
       const ArchivesView(),
@@ -74,24 +75,29 @@ class _HomeScreenState extends State<HomeScreen> {
             topRight: Radius.circular(60.0),
           ),
           child: NavigationBar(
-            destinations: const [
+            // height: screenHeight * 100,
+            destinations: [
               NavigationDestination(
                 icon: Icon(
                   Icons.widgets_outlined,
+                  applyTextScaling: true,
+                  size: iconSize,
                 ),
                 label: 'Actions',
               ),
               NavigationDestination(
                 icon: Icon(
                   Icons.archive_outlined,
-                  size: 20.0,
+                  applyTextScaling: true,
+                  size: iconSize,
                 ),
                 label: 'Archives',
               ),
               NavigationDestination(
                 icon: Icon(
                   Icons.settings_outlined,
-                  size: 20.0,
+                  applyTextScaling: true,
+                  size: iconSize,
                 ),
                 label: 'Configuration',
               ),
