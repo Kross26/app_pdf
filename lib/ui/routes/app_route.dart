@@ -12,7 +12,10 @@ final appRouter = GoRouter(routes: [
   ),
   GoRoute(
     path: '/invoice_screen',
-    // name: InvoiceForm.name,
+    builder: (context, state) => const InvoiceScreen(),
+  ),
+  GoRoute(
+    path: '/invoiceback_screen',
     builder: (context, state) => const InvoiceScreen(),
   ),
 ]);
