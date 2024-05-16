@@ -11,6 +11,7 @@ class MainApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp.router(
+      theme: ThemeData(colorSchemeSeed: Colors.white),
       title: 'App_PDF',
       routerConfig: appRouter,
       debugShowCheckedModeBanner: false,
