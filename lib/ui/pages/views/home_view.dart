@@ -13,7 +13,7 @@ class HomeView extends StatelessWidget {
       //   onPressed: () {},
       //   icon: Icons.archive,
       // ),
-      backgroundColor: const Color.fromRGBO(211, 211, 211, 1),
+      backgroundColor: const Color.fromRGBO(172, 226, 225, 100),
       body: SingleChildScrollView(
         child: Padding(
           padding: const EdgeInsets.all(12.0),
@@ -45,7 +45,7 @@ class HomeView extends StatelessWidget {
                       child: InkWell(
                         onTap: () {},
                         child: Card(
-                          elevation: 10,
+                          elevation: 5,
                           child: Container(
                             decoration: BoxDecoration(
                                 borderRadius: BorderRadius.circular(10),
@@ -74,7 +74,7 @@ class HomeView extends StatelessWidget {
                       child: InkWell(
                         onTap: () {},
                         child: Card(
-                          elevation: 10,
+                          elevation: 5,
                           child: Container(
                             decoration: BoxDecoration(
                                 borderRadius: BorderRadius.circular(10),
@@ -125,7 +125,7 @@ class HomeView extends StatelessWidget {
                       child: InkWell(
                         onTap: () => context.go('/invoice_screen'),
                         child: Card(
-                          elevation: 10,
+                          elevation: 5,
                           child: Container(
                             decoration: BoxDecoration(
                                 borderRadius: BorderRadius.circular(10),
