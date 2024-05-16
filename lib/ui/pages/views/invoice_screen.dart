@@ -25,7 +25,7 @@ class InvoiceScreen extends StatelessWidget {
               fontFamily: 'BebasNeue',
             ),
           ),
-          backgroundColor: const Color.fromRGBO(148, 148, 148, 1),
+          backgroundColor: const Color.fromARGB(106, 0, 166, 255),
           elevation: 5,
           shadowColor: Colors.black,
         ),
