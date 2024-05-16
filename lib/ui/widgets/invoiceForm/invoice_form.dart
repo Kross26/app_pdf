@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
-
-enum ChangeItem { patente, marca, chasis }
+import '../../screens.dart';
 
 class InvoiceForm extends StatefulWidget {
   const InvoiceForm({super.key});
@@ -9,87 +8,89 @@ class InvoiceForm extends StatefulWidget {
   State<InvoiceForm> createState() => _InvoiceFormState();
 }
 
+enum Place { patente, marca, chasis }
+
 class _InvoiceFormState extends State<InvoiceForm> {
-  
-  List<ChangeItem> selectedItems = [];
-  Color activeColor = Colors.white70;
+  Place? _place;
+  bool _homeFieldVisible = false;
+
+  void handleSelection(Place? value) {
+    setState(() {
+      _place = value;
+      _homeFieldVisible = value == Place.marca;
+    });
+  }
 
   @override
   Widget build(BuildContext context) {
-    double screenWidth = MediaQuery.of(context).size.width;
+    double screenWidht = MediaQuery.of(context).size.width;
     double screenHeight = MediaQuery.of(context).size.height;
     return Scaffold(
-      backgroundColor: const Color.fromRGBO(211, 211, 211, 1),
-      body: Column(
-        children: [
-          Padding(
-            padding: const EdgeInsets.only(top: 20),
-            child: Text(
-              'Selecciona una opción',
-              style: TextStyle(fontSize: screenWidth * 0.045),
-            ),
-          ),
-          SizedBox(height: screenHeight * 0.025),
-          buildRadioListTile(
-            title: 'Patente',
-            value: ChangeItem.patente,
-          ),
-          const SizedBox(height: 5),
-          buildRadioListTile(
-            title: 'Marca',
-            value: ChangeItem.marca,
-          ),
-          const SizedBox(height: 5),
-          buildRadioListTile(
-            title: 'Chasis',
-            value: ChangeItem.chasis,
-          ),
-          ElevatedButton(
-            onPressed: () {
-              // Imprimir los ítems seleccionados
-              print('Ítems seleccionados: $selectedItems');
-            },
-            child: const Text('Continuar'),
-          ),
-        ],
+      backgroundColor: const Color.fromRGBO(172, 226, 225, 100),
+      body: SafeArea(
+        child: Padding(
+            padding: const EdgeInsets.all(16),
+            child: Column(
+              children: [
+                Container(
+                  decoration: const BoxDecoration(
+                      borderRadius: BorderRadius.all(Radius.circular(30)),
+                      color: Colors.white),
+                  child: Column(
+                    children: [
+                      SizedBox(height: 10),
+                      Padding(
+                        padding: const EdgeInsets.all(8.0),
+                        child: Text(
+                          'Seleciona una opción',
+                          style: TextStyle(fontSize: screenWidht * 0.06),
+                        ),
+                      ),
+                      RadioListTile(
+                        title: const Text('Patente'),
+                        value: Place.patente,
+                        groupValue: _place,
+                        onChanged: handleSelection,
+                      ),
+                      RadioListTile(
+                        title: const Text('Marca'),
+                        value: Place.marca,
+                        groupValue: _place,
+                        onChanged: handleSelection,
+                      ),
+                      RadioListTile(
+                        title: const Text('Chasis'),
+                        value: Place.chasis,
+                        groupValue: _place,
+                        onChanged: handleSelection,
+                      ),
+                      const SizedBox(height: 16),
+                    ],
+                  ),
+                ),
+                SizedBox(height: screenHeight * 0.02),
+                ElevatedButton(
+                  onPressed: () {
+                    if (_place == null) {
+                      ScaffoldMessenger.of(context).showSnackBar(
+                        const SnackBar(
+                          content: Text('Por favor seleciona una opción.'),
+                        ),
+                      );
+                    } else {
+                      Navigator.push(
+                        context,
+                        MaterialPageRoute(
+                          builder: (context) => TextFieldScreen(place: _place!),
+                        ),
+                      );
+                    }
+                  },
+                  child: const Text('Continue'),
+                ),
+              ],
+            )),
       ),
-    );
-  }
-
-  Widget buildRadioListTile({
-    required String title,
-    required ChangeItem value,
-  }) {
-    bool isSelected = selectedItems.contains(value);
-
-    return Column(
-      children: [
-        Padding(
-          padding: const EdgeInsets.only(left: 50, right: 50),
-          child: Container(
-            decoration: BoxDecoration(
-              color: isSelected
-                  ? const Color.fromRGBO(148, 148, 148, 1)
-                  : Colors.white,
-              borderRadius: const BorderRadius.all(Radius.circular(30)),
-            ),
-            child: RadioListTile<ChangeItem>(
-              title: Text(title),
-              onChanged: (ChangeItem? value) {
-                setState(() {
-                  if (isSelected) {
-                    selectedItems.remove(value);
-                  } else {
-                    selectedItems.add(ChangeItem);
-                  }
-                });
-              },
-              value: ChangeItem,
-              groupValue: null,
-            ),
-          ),
-        ),
-      ],
     );
   }
 }
