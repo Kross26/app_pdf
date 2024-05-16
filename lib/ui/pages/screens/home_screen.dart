@@ -26,6 +26,7 @@ class _HomeScreenState extends State<HomeScreen> {
     double screenWidht = MediaQuery.of(context).size.width;
     double screenHeight = MediaQuery.of(context).size.height;
     double iconSize = MediaQuery.of(context).size.width * 0.045;
+    // declaracion variables
     final screens = [
       const HomeView(),
       const ArchivesView(),
@@ -36,7 +37,7 @@ class _HomeScreenState extends State<HomeScreen> {
       //   onPressed: () {},
       //   icon: Icons.archive,
       // ),
-      backgroundColor: Colors.white,
+      // backgroundColor: Colors.white,
       appBar: AppBar(
         title: Center(
           child: Text(
@@ -48,7 +49,7 @@ class _HomeScreenState extends State<HomeScreen> {
             ),
           ),
         ),
-        backgroundColor: const Color.fromRGBO(148, 148, 148, 1),
+        backgroundColor: const Color.fromARGB(106, 0, 166, 255),
         elevation: 5,
         shadowColor: Colors.black,
       ),
@@ -104,9 +105,9 @@ class _HomeScreenState extends State<HomeScreen> {
             ],
 
             animationDuration: const Duration(milliseconds: 400),
-            indicatorColor: Colors.white54,
-            backgroundColor: const Color.fromRGBO(148, 148, 148, 1),
-            shadowColor: Colors.black,
+            indicatorColor: Color.fromARGB(106, 0, 166, 255),
+            // backgroundColor: const Color.fromRGBO(148, 148, 148, 1),
+            // shadowColor: Colors.black,
             selectedIndex: currentIndex,
             // se llama cuando se seleciona una nueva pagina y actualiza "currentIndex" mostrando el titulo correspondiente
             onDestinationSelected: (int index) {
