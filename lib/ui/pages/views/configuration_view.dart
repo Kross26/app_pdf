@@ -18,7 +18,7 @@ class _ConfigurationViewState extends State<ConfigurationView> {
     // double screenWidht = MediaQuery.of(context).size.width;
     // double screenHeight = MediaQuery.of(context).size.height;
     return Scaffold(
-      backgroundColor: const Color.fromRGBO(211, 211, 211, 1),
+      backgroundColor: const Color.fromRGBO(172, 226, 225, 100),
       body: SafeArea(
         bottom: false,
         child: ListView(
