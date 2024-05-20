@@ -12,12 +12,12 @@ enum Place { patente, marca, chasis }
 
 class _InvoiceFormState extends State<InvoiceForm> {
   Place? _place;
-  bool _homeFieldVisible = false;
+  // bool _homeFieldVisible = false;
 
   void handleSelection(Place? value) {
     setState(() {
       _place = value;
-      _homeFieldVisible = value == Place.marca;
+      value == Place.marca;
     });
   }
 
@@ -38,7 +38,7 @@ class _InvoiceFormState extends State<InvoiceForm> {
                       color: Colors.white),
                   child: Column(
                     children: [
-                      SizedBox(height: 10),
+                      const SizedBox(height: 10),
                       Padding(
                         padding: const EdgeInsets.all(8.0),
                         child: Text(
@@ -71,6 +71,7 @@ class _InvoiceFormState extends State<InvoiceForm> {
                 SizedBox(height: screenHeight * 0.02),
                 ElevatedButton(
                   onPressed: () {
+                    // si no se seleciona ninguna opcion, muestra un snackbar
                     if (_place == null) {
                       ScaffoldMessenger.of(context).showSnackBar(
                         const SnackBar(
@@ -86,7 +87,7 @@ class _InvoiceFormState extends State<InvoiceForm> {
                       );
                     }
                   },
-                  child: const Text('Continue'),
+                  child: const Text('Continuar'),
                 ),
               ],
             )),

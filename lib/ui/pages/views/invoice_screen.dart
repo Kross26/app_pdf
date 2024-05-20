@@ -18,7 +18,7 @@ class InvoiceScreen extends StatelessWidget {
               onPressed: () => context.go('/'),
               icon: const Icon(Icons.arrow_back_outlined)),
           title: Text(
-            'Generate Invoice',
+            'Generador Etiqueta',
             style: TextStyle(
               fontSize: screenWidht * 0.05,
               fontWeight: FontWeight.w400,
@@ -30,7 +30,7 @@ class InvoiceScreen extends StatelessWidget {
           shadowColor: Colors.black,
         ),
         // se hace referencia a otra pantalla
-        body: InvoiceForm(),
+        body: const InvoiceForm(),
       ),
     );
   }
