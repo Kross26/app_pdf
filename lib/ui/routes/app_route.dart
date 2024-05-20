@@ -18,4 +18,8 @@ final appRouter = GoRouter(routes: [
     path: '/invoiceback_screen',
     builder: (context, state) => const InvoiceScreen(),
   ),
+  GoRoute(
+    path: '/imagetopdf_screen',
+    builder: (context, state) => const ImageToPdfScreen(),
+  ),
 ]);
