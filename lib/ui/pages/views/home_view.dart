@@ -9,10 +9,6 @@ class HomeView extends StatelessWidget {
     double screenWidht = MediaQuery.of(context).size.width;
     double screenHeight = MediaQuery.of(context).size.height;
     return Scaffold(
-      // floatingActionButton: FloatingButton(
-      //   onPressed: () {},
-      //   icon: Icons.archive,
-      // ),
       backgroundColor: const Color.fromRGBO(172, 226, 225, 100),
       body: SingleChildScrollView(
         child: Padding(
@@ -26,9 +22,8 @@ class HomeView extends StatelessWidget {
                     SizedBox(
                       width: screenWidht * 0.15,
                       height: screenHeight * 0.03,
-                      // titulo convert
                       child: Text(
-                        'CONVERT',
+                        'CONVERTIR',
                         style: TextStyle(
                           fontSize: screenWidht * 0.04,
                           fontWeight: FontWeight.w300,
@@ -60,7 +55,7 @@ class HomeView extends StatelessWidget {
                                   ),
                                 ),
                                 Text(
-                                  'TEXT TO PDF',
+                                  'TEXTO A PDF',
                                   style:
                                       TextStyle(fontSize: screenWidht * 0.03),
                                 ),
@@ -72,7 +67,7 @@ class HomeView extends StatelessWidget {
                     ),
                     Expanded(
                       child: InkWell(
-                        onTap: () {},
+                        onTap: () => context.go('/imagetopdf_screen'),
                         child: Card(
                           elevation: 5,
                           child: Container(
@@ -89,7 +84,7 @@ class HomeView extends StatelessWidget {
                                   ),
                                 ),
                                 Text(
-                                  'IMAGE TO PDF',
+                                  'IMAGEN A PDF',
                                   style:
                                       TextStyle(fontSize: screenWidht * 0.03),
                                 ),
@@ -108,7 +103,7 @@ class HomeView extends StatelessWidget {
                       width: screenWidht * 0.25,
                       height: screenHeight * 0.03,
                       child: Text(
-                        'Generate Invoice',
+                        'GENERAR ETIQUETA',
                         style: TextStyle(
                           fontSize: screenWidht * 0.04,
                           fontWeight: FontWeight.w300,
@@ -140,7 +135,7 @@ class HomeView extends StatelessWidget {
                                   ),
                                 ),
                                 Text(
-                                  'GENERATE INVOICE PDF',
+                                  'GENERAR ETIQUETA AUTO',
                                   style:
                                       TextStyle(fontSize: screenWidht * 0.03),
                                 ),

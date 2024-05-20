@@ -7,7 +7,7 @@ class ArchivesView extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: Color.fromRGBO(172, 226, 225, 100),
+      backgroundColor: const Color.fromRGBO(172, 226, 225, 100),
       body: Center(
         child: ElevatedButton(
           child: const Text('Solicitar permiso'),

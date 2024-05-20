@@ -105,7 +105,7 @@ class _HomeScreenState extends State<HomeScreen> {
             ],
 
             animationDuration: const Duration(milliseconds: 400),
-            indicatorColor: Color.fromARGB(106, 0, 166, 255),
+            indicatorColor: const Color.fromARGB(106, 0, 166, 255),
             // backgroundColor: const Color.fromRGBO(148, 148, 148, 1),
             // shadowColor: Colors.black,
             selectedIndex: currentIndex,
