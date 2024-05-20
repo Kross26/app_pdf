@@ -17,6 +17,7 @@ dependencies:
   path_provider: ^2.1.2
   pdf: ^3.10.8
   permission_handler: ^11.3.1
+  printing: ^5.12.0
 
 dev_dependencies:
   flutter_lints: ^3.0.0
@@ -28,6 +29,8 @@ flutter:
   assets:
     - assets/loading.gif
     - assets/crear.png
+    - assets/iconimage1.png
+    - assets/iconimage2.png
   fonts:
     - family: BebasNeue
       fonts:
