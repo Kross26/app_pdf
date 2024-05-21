@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter/widgets.dart';
 import 'package:pdf/widgets.dart' as pw;
 import 'package:printing/printing.dart';
 import 'package:pdf/pdf.dart';
@@ -45,7 +46,7 @@ class _TextFieldScreenState extends State<TextFieldScreen> {
         elevation: 5,
         shadowColor: Colors.black,
       ),
-      backgroundColor: const Color.fromRGBO(172, 226, 225, 100),
+      // backgroundColor: Color.fromARGB(255, 148, 228, 225),
       body: Padding(
         padding: const EdgeInsets.all(16),
         child: Column(
@@ -74,20 +75,34 @@ class _TextFieldScreenState extends State<TextFieldScreen> {
             ),
             SizedBox(height: screenHeight * 0.05),
             //
-            Text('Selecionaste ${widget.place.toString().split('.').last}'),
-            TextField(
-              decoration: InputDecoration(
-                // fillColor: Colors.red,
-                // hoverColor: Colors.red,
-                border: const OutlineInputBorder(),
-                hintText: 'Ingresa ${widget.place.toString().split('.').last}',
+            GestureDetector(
+              onTapUp: (details) {},
+              child: Column(
+                children: [
+                  Text(
+                      'Selecionaste ${widget.place.toString().split('.').last}'),
+                  Column(
+                    children: [
+                      TextField(
+                        decoration: InputDecoration(
+                          // fillColor: Colors.red,
+                          // hoverColor: Colors.red,
+                          border: const OutlineInputBorder(),
+                          hintText:
+                              'Ingresa ${widget.place.toString().split('.').last}',
+                        ),
+                        onChanged: (value) {
+                          setState(() {
+                            textFieldValue = value;
+                          });
+                        },
+                      ),
+                    ],
+                  )
+                ],
               ),
-              onChanged: (value) {
-                setState(() {
-                  textFieldValue = value;
-                });
-              },
             ),
+
             SizedBox(height: screenHeight * 0.02),
             ElevatedButton(
               onPressed: () {

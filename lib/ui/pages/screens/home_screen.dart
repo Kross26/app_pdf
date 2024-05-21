@@ -29,7 +29,7 @@ class _HomeScreenState extends State<HomeScreen> {
     // declaracion variables
     final screens = [
       const HomeView(),
-      const ArchivesView(),
+      ArchivesView(),
       const ConfigurationView()
     ];
     return Scaffold(
